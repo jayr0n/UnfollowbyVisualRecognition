@@ -12,9 +12,9 @@ visual_recognition.set_service_url('{Your Set Service URL}')
 
 class CheckProfilePic:
 
-    def verifica_imagem(self, url):
+    def verifica_imagem(self, id):
         self._classes = visual_recognition.classify(
-            url=RetornaIdUrl.retorna_url_img_pelo_id(url),
+            url=RetornaIdUrl.retorna_url_img_pelo_id(id),
             threshold='0.0',
             classifier_ids='{Your CustomModel ID}').get_result()
         self._dicionario_score = dict(self._classes, indent=2)
